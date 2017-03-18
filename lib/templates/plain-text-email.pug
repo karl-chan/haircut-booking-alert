@@ -1,0 +1,27 @@
+| Hi #{name},
+= '\n\n'
+| The following slots are now available at the London School of Barbering:
+
+-
+    for (var i = 0; i < events.length; i++) {
+        var event = events[i];
+        event.availableSlots = slots.filter(s => s.id == event.id).map(s => s.time);
+    }
+
+    var availableEvents = events.filter(e => e.availableSlots.length);
+
+each event, index in availableEvents
+    - var item = index + 1;
+    = '\n\n'
+
+    | #{item}. #{event.name}
+    |      Description: #{event.description}
+    |      Price: #{event.currency} #{event.price}
+    |      Availabilities: 
+    each slot in event.availableSlots
+        = '\n'        
+        |         #{slot.toString().slice(0, 21)}
+='\n\n'
+| Please make your booking at your earliest convenience to avoid disappointment.
+='\n\n'
+| ** This is an automated message. Please do not reply. **

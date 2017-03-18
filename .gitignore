@@ -1,0 +1,5 @@
+# Don't check in debug script (for dropping database etc.)
+debug.js
+
+# Don't check in node modules
+node_modules/

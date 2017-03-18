@@ -1,0 +1,57 @@
+doctype html
+
+head
+    style.
+
+        .italic {
+            font-style: italic
+        }
+
+    style
+        include css/bootstrap.min.css
+
+body
+    p.mb-3 Hi #{name},
+    p The following slots are now available at the London School of Barbering:    
+
+    -
+        for (var i = 0; i < events.length; i++) {
+            var event = events[i];
+            event.availableSlots = slots.filter(s => s.id == event.id).map(s => s.time);
+        }
+
+        var availableEvents = events.filter(e => e.availableSlots.length);
+
+ 
+    each event in availableEvents
+        p <br><br>
+
+        table
+            tbody
+                tr
+                    td(style="vertical-align: top")
+                        img.rounded-circle.d-flex.mr-4.mt-4(src=`http://londonschoolofbarbering.simplybook.me${event.picture_path}`, width="100px", height="100px")
+                    td
+                        h3.mt-0 #{event.name}
+                        table.table.table-sm.table-striped(style="width: 70%")
+                            tbody                        
+                                tr
+                                    td.text-muted.italic(colspan="2") #{event.description}
+                                tr
+                                    td Price:
+                                    if event.price > 0
+                                        td 
+                                            .badge.badge-danger #{event.currency} #{event.price}
+                                    else
+                                        td
+                                            .badge.badge-success Free
+                                tr
+                                    td(colspan="2") Availabilities:
+                                tr
+                                    td(colspan="2")
+                                        ul
+                                            each slot in event.availableSlots
+                                                li #{slot.toString().slice(0, 21)}
+    
+    p.mx-3 <br>Please make your booking at your earliest convenience to avoid disappointment.
+    p.text-muted.italic ** This is an automated message. Please do not reply. **
