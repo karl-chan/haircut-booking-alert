@@ -1,13 +1,13 @@
 {
   "name": "haircut-booking-alert",
   "version": "1.0.0",
-  "description": "",
+  "description": "Get email alerts when new haircut slots are available at the London School of Barbering",
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Karl Chan",
   "license": "UNLICENSED",
   "dependencies": {
     "async": "^2.1.5",
