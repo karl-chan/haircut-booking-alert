@@ -5,7 +5,7 @@ module.exports = [{
     criteria: alertCriteria, // replace with recepient's custom alert criteria
 }]
 
-const Calendar = require('../lib/Calendar.js');
+const Calendar = require('../lib/calendar.js');
 
 /**
  * Example alert criteria - Either after 6 PM or whole day on Saturdays and Sundays
