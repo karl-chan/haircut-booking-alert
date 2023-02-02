@@ -1,3 +1,5 @@
+**Deprecated: Use [beat-the-queue](https://github.com/karl-chan/beat-the-queue) instead.**
+
 # London School of Barbering alert system
 
 Want to have a free haircut?  The [London School of Barbering](http://www.londonschoolofbarbering.com/book-a-cut/free-haircuts/) offers them for men.  However they are very popular and the early bird catches the worm.
